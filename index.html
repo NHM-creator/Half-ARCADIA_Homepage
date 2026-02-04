@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ARCADIA - 전설의 시작</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              midnight: '#050520', // Deep rich navy
+              primary: '#191970', // Midnight Blue
+              gold: '#FFD700', // Gold
+              'dark-gold': '#2A2005', // Deep Bronze/Gold for backgrounds
+              magenta: '#FF00FF', // Magenta
+              'sunset-red': '#450a0a', // Deep reddish sunset (Dealer)
+              'tank-blue': '#1c3d8a', // Bright Defense Blue (Royal Blue-ish, not Sky Blue)
+              'support-holy': '#5c4d0a', // Holy Yellow (Dark Gold/Amber)
+              'abyss': '#1a0505', // Very dark red/black
+            },
+            fontFamily: {
+              serif: ['Cinzel', 'serif'],
+              sans: ['Inter', 'sans-serif'],
+            },
+            animation: {
+              'twinkle': 'twinkle 3s ease-in-out infinite',
+              'fade-in-down': 'fadeInDown 1s ease-out',
+              'fade-in-up': 'fadeInUp 1s ease-out',
+              'fade-in': 'fadeIn 1s ease-out',
+              'diamond-spin': 'diamondSpin 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards',
+              'diamond-pop': 'diamondPop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards',
+            },
+            keyframes: {
+              twinkle: {
+                '0%, 100%': { opacity: 0.3, transform: 'scale(1)' },
+                '50%': { opacity: 1, transform: 'scale(1.2)' },
+              },
+              fadeIn: {
+                '0%': { opacity: 0 },
+                '100%': { opacity: 1 },
+              },
+              fadeInDown: {
+                '0%': { opacity: 0, transform: 'translateY(-20px)' },
+                '100%': { opacity: 1, transform: 'translateY(0)' },
+              },
+              fadeInUp: {
+                '0%': { opacity: 0, transform: 'translateY(20px)' },
+                '100%': { opacity: 1, transform: 'translateY(0)' },
+              },
+              expandX: {
+                '0%': { transform: 'scaleX(0)', opacity: '0' },
+                '100%': { transform: 'scaleX(1)', opacity: '1' },
+              },
+              diamondSpin: {
+                '0%': { transform: 'rotate(45deg) scale(0)', opacity: '0', filter: 'brightness(1)' },
+                '50%': { transform: 'rotate(225deg) scale(1.5)', opacity: '1', filter: 'brightness(2.5) drop-shadow(0 0 10px #FFD700)' },
+                '100%': { transform: 'rotate(405deg) scale(1)', opacity: '1', filter: 'brightness(1) drop-shadow(0 0 5px #FFD700)' }
+              },
+              diamondPop: {
+                '0%': { transform: 'rotate(45deg) scale(0)', opacity: '0', filter: 'brightness(1)' },
+                '50%': { transform: 'rotate(45deg) scale(1.5)', opacity: '1', filter: 'brightness(2.5) drop-shadow(0 0 10px #FFD700)' },
+                '100%': { transform: 'rotate(45deg) scale(1)', opacity: '1', filter: 'brightness(1) drop-shadow(0 0 5px #FFD700)' }
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        background-color: #050520;
+        color: #e2e8f0;
+        word-break: keep-all; /* Korean typography improvement */
+      }
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #050520;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #450a0a;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #FFD700;
+      }
+      .glass-panel {
+        background: rgba(15, 23, 42, 0.6);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 215, 0, 0.2);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+      }
+      .text-glow {
+        text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+      }
+      .magenta-glow {
+        box-shadow: 0 0 15px rgba(255, 0, 255, 0.3);
+      }
+      
+      /* Recharts Accessibility Outline Fix */
+      .recharts-wrapper:focus,
+      .recharts-surface:focus,
+      .recharts-layer:focus,
+      .recharts-sector:focus,
+      .recharts-wrapper svg:focus {
+        outline: none !important;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-router-dom": "https://esm.sh/react-router-dom@^6.22.3",
+    "recharts": "https://esm.sh/recharts@^3.7.0",
+    "lucide-react": "https://esm.sh/lucide-react@^0.563.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
